@@ -73,4 +73,17 @@ public class Location {
     public int hashCode() {
         return name.hashCode();
     }
+    
+    /**
+     * Calculate the Euclidean distance between this location and another location.
+     * Uses the standard distance formula: √((x2-x1)² + (y2-y1)²)
+     * 
+     * @param other the other location to calculate distance to
+     * @return the distance between the two locations
+     */
+    public double distanceTo(Location other) {
+        double deltaX = this.x - other.x;
+        double deltaY = this.y - other.y;
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    }
 }
